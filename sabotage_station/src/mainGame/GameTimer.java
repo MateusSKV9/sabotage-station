@@ -8,7 +8,7 @@ public class GameTimer {
     private int count;
 
     public GameTimer(int seconds) {
-        this.count = segs;
+        this.count = seconds;
         this.timer = new Timer();
     }
 
