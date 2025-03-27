@@ -12,3 +12,5 @@ TRASNFORMAR EM OBJETO
     > Se for tipo TAL, adiciona na posição
 
 - envia de volta para a main, onde chama criarObj() pra ser adicionado simultaneamente a cada leitura de pixel/tile
+
+CHAMAR A CLASSE/PASSAR PARAMETROS DENTRO DE CADA LEVEL

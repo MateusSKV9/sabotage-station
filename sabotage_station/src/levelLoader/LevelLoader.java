@@ -3,29 +3,31 @@ package levelLoader;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
-import objsTemp.Objeto;
+import objsTemp.*;
 
 import java.util.ArrayList;
 
 public class LevelLoader {
 
-    static ArrayList<Objeto> objs = new ArrayList<>();
+    static ArrayList<Objeto> objCriado = new ArrayList<>();
 
     public static void criarObj(String tipo, int x, int y) {
         switch (tipo) {
             case "Barreira":
-                objs.add(new Barreira(x, y));
+                objCriado.add(new Barreira(x, y));
                 break;
             case "Laser":
-                objs.add(new Laser(x, y));
+                objCriado.add(new Laser(x, y));
                 break;
             case "Pistao":
-                objs.add(new Pistao(x, y));
+                objCriado.add(new Pistao(x, y));
                 break;
             case "Porta":
-                objs.add(new Porta(x, y));
+                objCriado.add(new Porta(x, y));
                 break;
 
         }
@@ -34,7 +36,13 @@ public class LevelLoader {
     public static void main(String[] args) {
 
         // carrega img da fase
-        BufferedImage img = ImageIO.read(new File("fase.png"));
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("fase.png"));
+        } catch (IOException e) {
+            System.out.println("ERRP CARREGAR IMG" + e.getMessage());
+            e.printStackTrace();
+        }
 
         int T_SIZE = 50;
         int lin = img.getHeight() / T_SIZE;
@@ -43,7 +51,7 @@ public class LevelLoader {
         for (int y = 0; y < lin; y++) {
             for (int x = 0; x < col; x++) {
 
-                // Pegar a cor do CENTRO do tile
+                // Pegar a cor do C E NTRO do t i le
                 int px = (x * T_SIZE) + (T_SIZE / 2);
                 int py = (y * T_SIZE) + (T_SIZE / 2);
 
@@ -51,6 +59,9 @@ public class LevelLoader {
                 Color color = new Color(img.getRGB(px, py));
 
                 String obj = corToObj(color);
+                if (!obj.equals("Vazio")) {
+                    criarObj(obj, x * T_SIZE, y * T_SIZE);
+                }
             }
         }
 
@@ -69,7 +80,7 @@ public class LevelLoader {
             return "Laser";
             // VERDE = PISTÃO
         } else if (color.equals(new Color(0, 225, 0))) {
-            return "Pistão";
+            return "Pistao";
             // AMARELO = PORTA
         } else if (color.equals(new Color(225, 225, 0))) {
             return "Porta";
