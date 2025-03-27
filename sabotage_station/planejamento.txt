@@ -3,4 +3,12 @@ LevelLoader (Leitor da imagem):
 - dividir a img em tiles de 50x50px
 -  ler a cor DO CENTRO do tile, pra evitar erros de precisão
 
+Criar objeto e seus parametros
+
 TRASNFORMAR EM OBJETO
+- Identifica o obj pelo tipo
+- criarObj() usa Switch case pra facilitar visualizaçao simples do codigo:
+    > Recebe o tipo e a posição
+    > Se for tipo TAL, adiciona na posição
+
+- envia de volta para a main, onde chama criarObj() pra ser adicionado simultaneamente a cada leitura de pixel/tile
