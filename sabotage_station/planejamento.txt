@@ -1,0 +1,6 @@
+LevelLoader (Leitor da imagem):
+- carregar a img em um buffered
+- dividir a img em tiles de 50x50px
+-  ler a cor DO CENTRO do tile, pra evitar erros de precisão
+
+TRASNFORMAR EM OBJETO
