@@ -1,6 +1,7 @@
 package levelLoader;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +30,12 @@ public class LevelLoader {
             case "Porta":
                 objCriado.add(new Porta(x, y));
                 break;
+        }
+    }
 
+    public static void desenharObjetos(Graphics g) {
+        for (Objeto obj : objCriado) {
+            obj.desenhar(g);
         }
     }
 

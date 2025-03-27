@@ -1,6 +1,9 @@
 package mainGame;
 
 import javax.swing.JPanel;
+
+import levelLoader.LevelLoader;
+
 import java.awt.Graphics;
 
 public class PanelJogo extends JPanel {
@@ -9,10 +12,8 @@ public class PanelJogo extends JPanel {
 
     }
 
-    /*
-     * public void paintComponent(Graphics g) {
-     * super.paintComponent(g);
-     * g.fillRect(100, 100, 260, 50); // x, y, largura, altura
-     * }
-     */
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        LevelLoader.desenharObjetos(g);
+    }
 }
