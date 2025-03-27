@@ -5,7 +5,6 @@ import javax.imageio.ImageIO;
 
 public class LevelLoader {
 
-    // ---------> LEITOR DA IMAGEM <------
     public static void main(String[] args) {
 
         // carrega img da fase
