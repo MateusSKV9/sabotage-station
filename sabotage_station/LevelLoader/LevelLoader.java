@@ -24,6 +24,8 @@ public class LevelLoader {
 
                 // Pega a cor do pixel
                 Color color = new Color(img.getRGB(px, py));
+
+                String obj = corToObj(color);
             }
         }
 
