@@ -12,8 +12,19 @@ Necessário que um “Panel-Pai” seja responsável por definir o tamanho exato
 
 
 (Marcus)--___________________________________--
+
+OBJETIVO:
+Cada Level terá uma classe própria (provavelmente um Panel) com suas próprias configurações.
+
+Devemos usar LevelLoader para primeiramente enviar a imagem do Level, que processará a cor de cada Tile da imagem, e criará o Level fisicamente, substituindo a cor do Tile pelo Objeto, e inicializando a fase.
+Essa criação deve acontecer retornando a coordenada (x, y) e o tipo de Objeto em cada espaço. (por isso necessitamos de objetos já criados com suas colisões, efeitos, etc)
+[ ! ] Como precisamos personalizar todas as fases, como intensidade de pistão, movimento de barreiras e objetos, etc, então precisamos ter o código da localização dos objetos acessivel. Portanto, o LevelLoader deve retornar o código com as coordernadas de cada objeto criado, para fazermos as devidas configurações.
+
+Com isso, devemos colocar esse código dentro das classes dos Levels
+
+
 LevelLoader (Leitor da imagem):
-- carregar a img em um buffered
+- carregar a img como um buffered
 - dividir a img em tiles de 50x50px
 -  ler a cor DO CENTRO do tile, pra evitar erros de precisão
 
