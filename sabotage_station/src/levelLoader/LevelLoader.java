@@ -44,10 +44,10 @@ public class LevelLoader {
         // carrega img da fase
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("src/assets/fases/fase.png"));
-
+            // usando ClassLoader pq dava erro sem
+            img = ImageIO.read(LevelLoader.class.getResource("/assets/fases/fase.png"));
         } catch (IOException e) {
-            System.out.println("ERRP CARREGAR IMG" + e.getMessage());
+            System.out.println("Erro ao carregar imagem: " + e.getMessage());
             e.printStackTrace();
         }
 
