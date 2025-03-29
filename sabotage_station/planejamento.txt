@@ -1,3 +1,17 @@
+>>>GERAL:
+PARA A ADIÇÃO DO TAMANHO EXATO DOS MAPAS E IMAGENS:
+O frame.setSize conta a barra de titulo, minimizar e fechar na contagem dos pixels. Significa que não sabemos a altura exata da Janela. Ex: 400x500, seria 400 - ?px.
+Necessário que um “Panel-Pai” seja responsável por definir o tamanho exato aproveitavel do jogo, e o Frame que acompanhe.
+
+
+
+
+
+
+
+
+
+(Marcus)--___________________________________--
 LevelLoader (Leitor da imagem):
 - carregar a img em um buffered
 - dividir a img em tiles de 50x50px
