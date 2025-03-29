@@ -48,10 +48,8 @@ public class LevelLoader {
                 // Pega a cor do pixel
                 Color color = new Color(img.getRGB(px, py));
 
-                String obj = corToObj(color);
-                if (!obj.equals("Vazio")) {
-                    criarObjporCor(obj, x * T_SIZE, y * T_SIZE);
-                }
+                // envia a cor e coordenada
+                criarObjPorCor(color, x * T_SIZE, y * T_SIZE);
             }
         }
 
