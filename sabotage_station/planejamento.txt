@@ -22,6 +22,7 @@ Essa criação deve acontecer retornando a coordenada (x, y) e o tipo de Objeto 
 
 Com isso, devemos colocar esse código dentro das classes dos Levels
 
+[ ! ? ] -> Os códigos comentados são rascunhos e ideias que o tutorial apresentou. Devo adaptar esses codigos ou reutiliza-los para nossas ideias. 
 
 LevelLoader (Leitor da imagem):
 - carregar a img como um buffered

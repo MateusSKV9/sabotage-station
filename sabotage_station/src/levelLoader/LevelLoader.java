@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class LevelLoader {
 
+    // public static FASE_UM = "/assets/fases/fase1.png";
+
     static ArrayList<Objeto> objCriado = new ArrayList<>();
 
     public static void desenharObjetos(Graphics g) {
@@ -76,3 +78,26 @@ public class LevelLoader {
     }
 
 }
+/*
+ * public static int[][] getLevelData{
+ * //array dos objetos
+ * int[][] lvlData = new int[PanelJogo.T_AlturaTela][PanelJogo.T_LarguraTela];
+ * //imagem q vai receber
+ * BufferedImage img = FASE_UM
+ * 
+ * for(int j=0. j<img.getHeight(); j++){
+ * for(int i=0; i<img.getWidth(); i++){
+ * Color color = new Color(img.getRGB(i, j));
+ * 
+ * int value = color.getRed();
+ * if(value>=48){ //se o valor for maior que o tamanho da iamgem, ele nao existe
+ * value = 0;
+ * }
+ * lvlData[j][i] = value;
+ * }
+ * return lvlData;
+ * }
+ * 
+ * }
+ * 
+ */
