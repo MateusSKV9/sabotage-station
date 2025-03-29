@@ -7,3 +7,6 @@ public class PanelLevels extends JPanel {
 	}
 
 }
+
+// GameTimer gameTimer = new GameTimer(10);
+// gameTimer.iniciar();

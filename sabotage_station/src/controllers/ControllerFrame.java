@@ -12,12 +12,13 @@ import visual.PanelStart;
 public class ControllerFrame implements ActionListener {
 	Frame frame;
 	PanelStart panelStart;
+	PanelJogo panelJogo;
 	ControllerStart controllerStart;
 
 	public ControllerFrame() {
-		PanelJogo panelJogo = new PanelJogo();
-		frame = new Frame(panelJogo);
 		panelStart = new PanelStart();
+		frame = new Frame(panelStart);
+
 		controllerStart = new ControllerStart(panelStart, frame);
 		frame.setContentPane(panelStart);
 
@@ -31,6 +32,13 @@ public class ControllerFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		// trocar panel qnd clica no botao
+		if (e.getSource() == panelStart.getBtnStart()) {
+			panelJogo = new PanelJogo();
+			frame.setContentPane(panelJogo);
+
+			frame.revalidate();
+			frame.repaint();
+		}
 	}
 }

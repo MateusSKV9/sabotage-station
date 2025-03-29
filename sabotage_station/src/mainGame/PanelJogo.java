@@ -2,7 +2,7 @@ package mainGame;
 
 import javax.swing.JPanel;
 
-import levelLoader.LevelLoader;
+import LevelLoader.LevelLoader;
 
 import java.awt.Graphics;
 

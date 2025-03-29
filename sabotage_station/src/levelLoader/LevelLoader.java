@@ -1,4 +1,4 @@
-package levelLoader;
+package LevelLoader;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -44,8 +44,8 @@ public class LevelLoader {
         // carrega img da fase
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("C:/Users/User/git/sabotage-station/sabotage_station/src/assets/fases/fase.png"));
-            
+            img = ImageIO.read(new File("src/assets/fases/fase.png"));
+
         } catch (IOException e) {
             System.out.println("ERRP CARREGAR IMG" + e.getMessage());
             e.printStackTrace();
