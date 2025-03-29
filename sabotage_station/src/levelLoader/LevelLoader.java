@@ -16,23 +16,6 @@ public class LevelLoader {
 
     static ArrayList<Objeto> objCriado = new ArrayList<>();
 
-    public static void criarObj(String tipo, int x, int y) {
-        switch (tipo) {
-            case "Barreira":
-                objCriado.add(new Barreira(x, y));
-                break;
-            case "Laser":
-                objCriado.add(new Laser(x, y));
-                break;
-            case "Pistao":
-                objCriado.add(new Pistao(x, y));
-                break;
-            case "Porta":
-                objCriado.add(new Porta(x, y));
-                break;
-        }
-    }
-
     public static void desenharObjetos(Graphics g) {
         for (Objeto obj : objCriado) {
             obj.desenhar(g);
@@ -67,7 +50,7 @@ public class LevelLoader {
 
                 String obj = corToObj(color);
                 if (!obj.equals("Vazio")) {
-                    criarObj(obj, x * T_SIZE, y * T_SIZE);
+                    criarObjporCor(obj, x * T_SIZE, y * T_SIZE);
                 }
             }
         }
@@ -75,25 +58,23 @@ public class LevelLoader {
     }
 
     // Relacionar a cor com um objeto
-    public static String corToObj(Color color) {
+    public static void criarObjPorCor(Color color, int x, int y) {
         // PRETO = VAZIO
         if (color.equals(new Color(0, 0, 0))) {
-            return "Vazio";
-            // AZUL = BARREIRA/PCHÃO/PAREDE
+            return;
+            // AZUL = BARREIRA(CHAO, PAREDE, PLATAFORMA)
         } else if (color.equals(new Color(0, 0, 225))) {
-            return "Barreira";
+            objCriado.add(new Barreira(x, y));
             // VERMELHO = LASER
         } else if (color.equals(new Color(225, 0, 0))) {
-            return "Laser";
-            // VERDE = PISTÃO
+            objCriado.add(new Laser(x, y));
         } else if (color.equals(new Color(0, 225, 0))) {
-            return "Pistao";
+            // VERDE = PISTAO
+            objCriado.add(new Pistao(x, y));
             // AMARELO = PORTA
         } else if (color.equals(new Color(225, 225, 0))) {
-            return "Porta";
+            objCriado.add(new Porta(x, y));
         }
-        // Fora desse espectro não existe
-        return "NE";
     }
 
 }
