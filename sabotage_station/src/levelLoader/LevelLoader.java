@@ -1,4 +1,6 @@
-package LevelLoader;
+package levelLoader;
+
+
 
 import java.awt.Color;
 import java.awt.Graphics;

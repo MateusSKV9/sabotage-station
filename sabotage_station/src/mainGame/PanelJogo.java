@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 
 import controllers.ControllerLevel;
-import LevelLoader.LevelLoader;
+
 
 public class PanelJogo extends JPanel {
 
