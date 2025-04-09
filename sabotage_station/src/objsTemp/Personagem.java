@@ -1,6 +1,8 @@
 package objsTemp;
 
 import javax.swing.JButton;
+
+import java.awt.Graphics;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.Timer;
@@ -8,7 +10,7 @@ import javax.swing.Timer;
 public class Personagem extends JButton {
 
     private int altura = 500;
-    private boolean subindo = false; 
+    private boolean subindo = false;
     private boolean caindo = false;
     private int gravidade = 1;
     private int forcapulo = -25;
@@ -17,9 +19,8 @@ public class Personagem extends JButton {
     public Personagem() {
         setText("Personagem");
         setBounds(300, altura, 100, 100);
-        setFocusable(true);  
+        setFocusable(true);
 
-       
         Timer timer = new Timer(20, e -> atualizarPulo());
         timer.start();
 
@@ -29,15 +30,15 @@ public class Personagem extends JButton {
 
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_A:
-                    	setLocation(getX() - 20, getY());               
+                        setLocation(getX() - 20, getY());
                         break;
                     case KeyEvent.VK_D:
-                    	setLocation(getX() + 20, getY());
+                        setLocation(getX() + 20, getY());
                         break;
-                    case KeyEvent.VK_W: 
-                        
+                    case KeyEvent.VK_W:
+
                         if (!caindo && !subindo) {
-                            subindo = true; 
+                            subindo = true;
                             velocidade_ver = forcapulo;
                         }
                         break;
@@ -46,36 +47,40 @@ public class Personagem extends JButton {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                
+
             }
         });
     }
 
     public void atualizarPulo() {
         if (subindo) {
-            altura += velocidade_ver;  
-            velocidade_ver++;  
+            altura += velocidade_ver;
+            velocidade_ver++;
 
-           
-            if (altura <= 300) {  
-                subindo = false;  
-                caindo = true;    
+            if (altura <= 300) {
+                subindo = false;
+                caindo = true;
             }
         }
-
 
         if (caindo) {
-            velocidade_ver += gravidade;  
-            altura += velocidade_ver;  
-
+            velocidade_ver += gravidade;
+            altura += velocidade_ver;
 
             if (altura >= 500) {
-                altura = 500;  
-                caindo = false;  
-                velocidade_ver = 0;  
+                altura = 500;
+                caindo = false;
+                velocidade_ver = 0;
             }
         }
 
-        setLocation(getX(), altura);  
+        setLocation(getX(), altura);
     }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Add um sprite depois
+    }
+
 }

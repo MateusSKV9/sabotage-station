@@ -19,7 +19,9 @@ public class ControllerFrame implements ActionListener {
 		panelStart = new PanelStart();
 		frame = new Frame(panelStart);
 
-		controllerStart = new ControllerStart(panelStart, frame);
+		panelStart.getBtnStart().addActionListener(this);
+
+		// controllerStart = new ControllerStart(panelStart, frame);
 		frame.setContentPane(panelStart);
 
 		frame.revalidate();

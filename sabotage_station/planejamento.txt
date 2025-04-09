@@ -7,7 +7,7 @@ Necessário que um “Panel-Pai” seja responsável por definir o tamanho exato
 
 
 
-
+Se possível, classe Objetos, alem de sua propria imagem, colisão, posição e efeitos, já carrega um metodo para "se mostrar", sem necessidade de terceiros. Basta chamar um objeto em um Panel, passando sua posição, que ela aparece na tela.
 
 
 

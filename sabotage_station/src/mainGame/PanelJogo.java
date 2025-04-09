@@ -4,15 +4,31 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 
 import controllers.ControllerLevel;
-
+import objsTemp.Personagem;
 
 public class PanelJogo extends JPanel {
 
     // private GameThread
     // private Player player;
+    private Personagem player;
+
     private ControllerLevel controllerLevel;
 
     public PanelJogo() {
+
+        // foco automático para o player quando exibir o painel (TECLADO)
+        addHierarchyListener(e -> {
+            if (isShowing()) {
+                player.requestFocusInWindow();
+            }
+        });
+
+        player = new Personagem();
+        add(player);
+
+        // player.requestFocusInWindow();
+        // setFocusable(true);
+        // requestFocusInWindow();
     }
 
     /*
