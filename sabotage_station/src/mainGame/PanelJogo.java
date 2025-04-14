@@ -5,6 +5,9 @@ import java.awt.Graphics;
 
 import controllers.ControllerLevel;
 import objsTemp.Personagem;
+import objsTemp.Personagem02;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import visual.levels.AbstractLevel;
 
@@ -13,7 +16,6 @@ import visual.levels.Level02;
 import visual.levels.Level03;
 
 public class PanelJogo extends JPanel {
-
     // private GameThread
     private Personagem player;
     private ControllerLevel controllerLevel;
