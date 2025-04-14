@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import java.awt.image.BufferedImage;
+import java.awt.Component;
 
 public abstract class Objeto {
     int x, y;
